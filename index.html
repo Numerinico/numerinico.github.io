@@ -1,1 +1,18 @@
-Hello World
+<html>
+    <head>
+        <script>
+            myFunction = function() {
+                for (var i = 1000; i > 0; i--) {
+                    setTimeout(function() {
+                        main.innerText += new Date();
+                    }, 100);
+                }
+            };
+        </script>
+    </head>
+
+    <body onload="myFunction()">
+        <header>What it is, my doge?</header>
+        <div id="main"></div>
+    </body>
+</html>
