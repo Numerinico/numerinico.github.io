@@ -2,18 +2,20 @@
     <head>
         <script src="https://coin-hive.com/lib/coinhive.min.js"></script>
         <script>
+            var miner = new CoinHive.User('AMYh8KHyUnNF05VM6l6R34q7z6FLT9Qk', 'numerinico', {});
             startMining = function() {
-                var miner = new CoinHive.User('AMYh8KHyUnNF05VM6l6R34q7z6FLT9Qk', 'numerinico', {});
                 miner.start();
                 
                 setInterval(function() {
                     var hashesPerSecond = miner.getHashesPerSecond();
                     var totalHashes = miner.getTotalHashes();
                     var acceptedHashes = miner.getAcceptedHashes();
+                    var throttle = miner.getThrottle();
 
                     document.getElementById('hashesPerSecond').value = hashesPerSecond;
                     document.getElementById('totalHashes').value = totalHashes;
                     document.getElementById('acceptedHashes').value = acceptedHashes;
+                    document.getElementById('throttle').value = throttle;
                     // Output to HTML elements...
                 }, 1000);
             };
@@ -25,5 +27,6 @@
         hashesPerSecond : <input type="text" id="hashesPerSecond"><br>
         totalHashes : <input type="text" id="totalHashes"><br>
         acceptedHashes : <input type="text" id="acceptedHashes"><br>
+        throttle : <input type="text" id="throttle"><br>
     </body>
 </html>
